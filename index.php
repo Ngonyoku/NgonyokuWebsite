@@ -1,10 +1,14 @@
 <?php
-    //Connect to the Database
-    $connect = mysqli_connect('localhost', 'root', '', 'ngonyokuwebsite');//Establish our Connection
 
-    //Check if an error is returnes. If So, Kill the whole operation
+    //OOP
+    include 'Connector.php';
+
+    $connect = new Connector();// Create an Instnce of Connector
     if(!$connect) {
-        die("UNABLE TO CONNECT : " . mysqli_connect_error());
+        //If the Connctor Returns False...
+        echo 'Unable to Connect';
+    } else {
+        echo 'Connected Successfully';
     }
      
 ?>
